@@ -1,4 +1,5 @@
 import TrendToProductApp from "./TrendToProductApp";
+import ErrorBoundary from "@/components/ErrorBoundary";
 
 export default async function ExperiencePage({
 	params,
@@ -7,5 +8,9 @@ export default async function ExperiencePage({
 }) {
 	const { experienceId } = await params;
 	
-	return <TrendToProductApp />;
+	return (
+		<ErrorBoundary>
+			<TrendToProductApp />
+		</ErrorBoundary>
+	);
 }
