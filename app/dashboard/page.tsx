@@ -328,7 +328,7 @@ export default function DashboardPage() {
 
 				<AnimatePresence>
 					{error && (
-						<motion.div 
+		<motion.div
 							initial={{ opacity: 0, y: -20 }} 
 							animate={{ opacity: 1, y: 0 }} 
 							exit={{ opacity: 0, y: -20 }} 
@@ -358,8 +358,8 @@ export default function DashboardPage() {
 								<button onClick={() => setError(null)} className={`${error.startsWith("PROTOCOL_VIOLATION") ? "text-amber-400 hover:text-amber-300" : "text-red-400 hover:text-red-300"}`}>✕</button>
 							</div>
 						</motion.div>
-					)}
-				</AnimatePresence>
+				)}
+			</AnimatePresence>
 
 				<GoalIntakeModal isOpen={showGoalModal} onComplete={handleGoalComplete} onSkip={() => setShowGoalModal(false)} />
 
@@ -375,16 +375,16 @@ export default function DashboardPage() {
 					<AnimatePresence mode="wait">
 						{selectedTrend ? (
 							<motion.div key="selected" initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -20 }} className="card-premium rounded-xl p-6">
-								<div className="flex items-start justify-between mb-4">
-									<div>
-										<div className="flex items-center gap-2 mb-2">
+				<div className="flex items-start justify-between mb-4">
+					<div>
+						<div className="flex items-center gap-2 mb-2">
 											<div className="w-2 h-2 rounded-full bg-openai-accent-400 animate-pulse"></div>
 											<span className="text-xs font-semibold text-openai-accent-400 uppercase">Selected</span>
 										</div>
 										<h3 className="text-2xl font-bold text-white mb-2">{selectedTrend.topic}</h3>
 									</div>
 									<button onClick={() => { setSelectedTrend(null); setProductIdeas(null); setDominanceDossier(null); setStructuredBlueprint(null); setSelectedProductType(null); }} className="text-gray-400 hover:text-white">✕</button>
-								</div>
+						</div>
 								<p className="text-sm text-gray-300 mb-6">{selectedTrend.summary?.whyItMatters || "Ready to generate product ideas."}</p>
 								<div className="space-y-4">
 									<div>
@@ -410,7 +410,7 @@ export default function DashboardPage() {
 												<option value="Automation">Automation</option>
 											</>}
 										</select>
-									</div>
+					</div>
 									
 									{/* BIG GENERATE BUTTON - Always visible */}
 									<button
@@ -435,16 +435,16 @@ export default function DashboardPage() {
 										<div className="flex items-center gap-3 p-4 bg-obsidian-100 rounded-lg">
 											<div className="animate-spin rounded-full h-5 w-5 border-2 border-openai-accent-400 border-t-transparent"></div>
 											<p className="text-sm text-gray-300">Generating your product blueprint...</p>
-										</div>
-									)}
-								</div>
+						</div>
+					)}
+				</div>
 							</motion.div>
 						) : (
 							<motion.div key="empty" initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="card-premium rounded-xl p-12 flex items-center justify-center min-h-[400px]">
 								<div className="text-center">
 									<div className="text-6xl mb-4">🎯</div>
 									<p className="text-gray-400">Select a trend to begin</p>
-								</div>
+					</div>
 							</motion.div>
 						)}
 					</AnimatePresence>
@@ -462,8 +462,8 @@ export default function DashboardPage() {
 											<div className="h-4 bg-obsidian-200 rounded w-full"></div>
 											<div className="h-4 bg-obsidian-200 rounded w-5/6"></div>
 										</div>
-									</div>
-								</div>
+				</div>
+						</div>
 							))}
 						</div>
 					</motion.div>
